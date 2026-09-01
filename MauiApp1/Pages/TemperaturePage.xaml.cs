@@ -1,4 +1,4 @@
-namespace LoanCalculator.Pages;          // ← must match your project name
+namespace MauiApp1.Pages;      // ← must match your project name
 
 public partial class TemperaturePage : ContentPage
 {

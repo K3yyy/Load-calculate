@@ -1,4 +1,4 @@
-﻿namespace LoanCalculator;
+﻿namespace MauiApp1;
 
 public partial class MainPage : TabbedPage
 {
