@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiApp1.ViewModels"
+             x:Class="MauiApp1.Pages.EmployeeDetailPage3"
+             x:DataType="vm:EmployeeDetailViewModels3"
+             Title="Employee Details">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <!-- Header -->
+            <Border BackgroundColor="#512BD4" StrokeThickness="0" Padding="20">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="16"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                    <Label Text="{Binding Employee.EmployeeName}"
+                           FontSize="26" FontAttributes="Bold"
+                           TextColor="White" HorizontalOptions="Center"/>
+                    <Label Text="{Binding Employee.Email}"
+                           FontSize="14" TextColor="#DDD6FF"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Details card -->
+            <Border Padding="20" StrokeThickness="1"
+                    Stroke="{AppThemeBinding Light=#E0E0E0, Dark=#3A3A3A}"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="16"/>
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="14">
+                    <Label Text="BASIC INFORMATION" FontSize="12"
+                           FontAttributes="Bold" TextColor="#512BD4"/>
+
+                    <VerticalStackLayout Spacing="2">
+                        <Label Text="Employee ID" FontSize="12" TextColor="Gray"/>
+                        <Label Text="{Binding Employee.EmployeeId}" FontSize="18"/>
+                    </VerticalStackLayout>
+
+                    <BoxView HeightRequest="1" Color="{AppThemeBinding Light=#EEE, Dark=#333}"/>
+
+                    <VerticalStackLayout Spacing="2">
+                        <Label Text="Name" FontSize="12" TextColor="Gray"/>
+                        <Label Text="{Binding Employee.EmployeeName}" FontSize="18"/>
+                    </VerticalStackLayout>
+
+                    <BoxView HeightRequest="1" Color="{AppThemeBinding Light=#EEE, Dark=#333}"/>
+
+                    <VerticalStackLayout Spacing="2">
+                        <Label Text="Email" FontSize="12" TextColor="Gray"/>
+                        <Label Text="{Binding Employee.Email}" FontSize="18"/>
+                    </VerticalStackLayout>
+
+                    <BoxView HeightRequest="1" Color="{AppThemeBinding Light=#EEE, Dark=#333}"/>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Part-Time" FontSize="18" VerticalOptions="Center"/>
+                        <Switch Grid.Column="1"
+                                IsToggled="{Binding Employee.IsPartTime}"
+                                IsEnabled="False"
+                                OnColor="#512BD4"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
